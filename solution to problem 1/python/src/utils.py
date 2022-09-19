@@ -6,6 +6,6 @@ def format_to_fractional(probs):
 def print_probs(probs):
     for key, prob in probs.items():
         if type(prob) is Fraction:
-            print(f"{key} = {prob}")
+            print(f"    {key} = {prob}")
         else: 
-            print(f"{key} = {prob:.3f}")
+            print(f"    {key} = {prob:.2f}")
