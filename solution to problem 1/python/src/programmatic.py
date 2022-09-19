@@ -24,3 +24,25 @@ def get_probabilities_programmatically(s: set, r: int) -> dict:
                 }
     """
 
+    if not s:
+        raise ValueError("please specify a set")
+    if not r:
+        raise ValueError("please specify a sampling number")
+
+    s = list(range(1,lenS+1))
+    n = len(s)
+    lenS = len(s)
+    sIndexes = list(range(1,n+1))
+
+    combinations = list(itertools.combinations(sIndexes, r))
+    probs = { i:0 for i in range(1,n+1)}
+
+    for combination in combinations:
+        probs[min(combination)] += 1
+
+    total = sum(probs.values())
+    for sIndex, _  in probs.items():
+        probs[sIndex] /= total
+
+    return probs
+
