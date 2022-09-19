@@ -30,7 +30,5 @@ def normalize_probs(probs: Dict) -> Dict:
                 }
     '''
     total = sum(probs.values())
-    print("inside programmatical")
-    print("normalization")
     for sIndex, _ in probs.items():
         probs[sIndex] /= total
