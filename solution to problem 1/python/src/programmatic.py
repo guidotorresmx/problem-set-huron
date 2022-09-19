@@ -1,7 +1,7 @@
 import itertools
 from fractions import Fraction
 from typing import Dict, Set
-from utils import formatProbs
+from utils import format_to_fractional, print_probs
 
 
 def get_probs_programmatically(s: Set, r: int) -> Dict:
@@ -57,5 +57,7 @@ if __name__ == "__main__":
     s = sorted([49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46])
     r = 6
     probs = get_probs_programmatically(s, r)
-    formatProbs(probs)
-    print(probs)
+    print("Probabilities in fractional form:")
+    print_probs(format_to_fractional(probs))
+    print("Probabilities in decimal form:")
+    print_probs(probs)
