@@ -1,8 +1,8 @@
 import unittest
-from analytical import get_probs_analytically as get_probs
+from programmatical import get_probs_programmatically as get_probs
 
 class TestSum(unittest.TestCase):
-    #target = __import__("../analytical.py")
+    #target = __import__("../programmatical.py")
 
     def test_base(self):
         self.s = sorted([49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46])
