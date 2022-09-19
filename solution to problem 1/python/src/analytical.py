@@ -1,13 +1,7 @@
 import itertools
-from math import factorial
+from math import comb as nCr
 from typing import Dict, Set
 from utils import format_to_fractional, print_probs
-
-def combinations(n, r):
-    try:
-        return factorial(n)/(factorial(r)*factorial(n-r))
-    except:
-        return 0
 
 def get_probs_analytically(s: Set, r: int) -> Dict:
     '''
@@ -40,9 +34,9 @@ def get_probs_analytically(s: Set, r: int) -> Dict:
     n = len(s)
 
     probs = {}
-    denominator = combinations(n,r)
+    denominator = nCr(n,r)
     for i, val in enumerate(s):
-        numerator = combinations(n-i-1,r-1)
+        numerator = nCr(n-i-1,r-1)
         probs[val] = numerator/denominator
 
     return probs
