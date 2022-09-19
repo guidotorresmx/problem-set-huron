@@ -1,6 +1,8 @@
 import itertools
 from fractions import Fraction
 from typing import Dict, Set
+from utils import formatProbs
+
 
 def get_probs_programmatically(s: Set, r: int) -> Dict:
     '''
@@ -32,7 +34,7 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     n = len(s)
     sIndexes = list(range(1, n + 1))
 
-    #TODO: further optimization may be required
+    #TODO: verify possible further optimization
     combinations = list(itertools.combinations(sIndexes, r))
     probs = {i: 0 for i in range(1, n + 1)}
 
@@ -44,15 +46,16 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
         probs[sIndex] /= total
 
     #TODO: change to implace or change algorithm for vales to indexes
-    newProbs = {}
+    FinalProbs = {}
     for key, item in probs.items():
-        newProbs[list(s)[key-1]] = item
-
-    return newProbs
+        FinalProbs[list(s)[key-1]] = item 
+        
+    return FinalProbs
 
 
 if __name__ == "__main__":
     s = sorted([49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46])
     r = 6
     probs = get_probs_programmatically(s, r)
+    formatProbs(probs)
     print(probs)
