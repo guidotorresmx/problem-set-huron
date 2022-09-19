@@ -15,7 +15,7 @@ Analytic and Programmatic solutions for the first problem described in c++ for [
 To execute and get results, use:
 ```
  git clone https://github.com/guidotorresmx/problem-set-huron.git
- cd "solution to problem 1"
+ cd "solution-to-problem-1"
  cd cpp
  g++ ./src/main.cpp -o main
  ./main

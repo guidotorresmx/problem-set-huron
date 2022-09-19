@@ -30,5 +30,5 @@ Source code of the project can be found at [https://github.com/guidotorresmx/pro
 
 
 ## Links to solutions
-- [https://github.com/guidotorresmx/problem-set-huron/](Analytical and Programmatical solution in c++ -> )
-- [https://github.com/guidotorresmx/problem-set-huron/](Analytical and Programmatical solution in python -> )
+- [https://github.com/guidotorresmx/problem-set-huron/tree/main/solution-to-problem-1/cpp](Analytical and Programmatical solution in c++ -> )
+- [https://github.com/guidotorresmx/problem-set-huron/tree/main/solution-to-problem-1/python](Analytical and Programmatical solution in python -> )

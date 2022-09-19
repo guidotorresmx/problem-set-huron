@@ -18,8 +18,9 @@ Analytic and Programmatic solutions for the first problem described in [project]
 To execute and get results, use:
 ```
  git clone https://github.com/guidotorresmx/problem-set-huron.git
- cd "solution to problem 1"
- python -m python.src.main
+ cd "solution-to-problem-1"
+ cd python
+ python -m src.main
 ```
 
 ## Testing
@@ -27,6 +28,7 @@ To execute and get results, use:
 To test this code use:
 ```
  git clone https://github.com/guidotorresmx/problem-set-huron.git
- cd "solution to problem 1"
+ cd "solution-to-problem-1"
+ cd python
  python -m unittest
 ```
