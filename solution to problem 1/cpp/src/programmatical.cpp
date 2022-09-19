@@ -1,12 +1,6 @@
-#include "../include/programmatical.h"
-#include <iostream>
-#include <cmath>
-#include <set>
-#include <map>
-#include <vector>
-#include <algorithm>
-
+#include "../include/shared.hpp"
 using namespace std;
+
 
 void get_combinations_recursive(
         uint16_t n, 
@@ -36,7 +30,7 @@ void normalize_vector(vector<float> &values){
          n = n/total;
 }
 
-void get_probs_analytically(
+void get_probs_programmatically(
         set<uint16_t> &s, 
         uint16_t r,
         map<uint16_t, float> &probs          
@@ -71,7 +65,7 @@ void programmatical(){
     uint16_t r=6;
 
     map<uint16_t, float> probs;
-    get_probs_analytically(s, r, probs);
+    get_probs_programmatically(s, r, probs);
 
     for(auto i=probs.begin(); i!=probs.end(); ++i){
         printf("%d : %.3f \n", i->first, i->second);   

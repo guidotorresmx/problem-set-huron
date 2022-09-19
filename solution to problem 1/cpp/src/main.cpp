@@ -1,13 +1,17 @@
-#include "../src/programmatical.cpp"
-#include "../src/analytical.cpp"
-
-#include <iostream>
+#include "../include/shared.hpp"
+#include "analytical.cpp"
+#include "programmatical.cpp"
 using namespace std;
 
 
 int main(){
+    cout << "====================================" << endl;
+    cout << "Programmatical solution in c++" << endl;
     programmatical();
+
+    cout << "Analytical solution in c++" << endl;
     analytical();
-    cout << "from main " << endl;
+    cout << "====================================" << endl;
+
     return 0;
 }

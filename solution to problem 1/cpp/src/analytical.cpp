@@ -1,12 +1,5 @@
-#include "../include/analytical.h"
-#include <iostream>
-#include <cmath>
-#include <set>
-#include <map>
-#include <vector>
-
+#include "../include/shared.hpp"
 using namespace std;
-//map<int, float> get_probs_analytically(s: Set, r: int) -> Dict:
 
 uint32_t nCr( uint16_t n, uint16_t r )
 {
@@ -41,7 +34,7 @@ void get_probs_analytically(
     }
 }
 
-int analytical(){
+void analytical(){
     set<uint16_t> s{49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46};
     uint16_t r=6;
 
