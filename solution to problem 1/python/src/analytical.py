@@ -42,7 +42,7 @@ def get_probs_analytically(s: Set, r: int) -> Dict:
     return probs
 
 
-if __name__ == "__main__":
+def main():
     s = sorted([49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46])
     r = 6
     probs = get_probs_analytically(s, r)
@@ -50,3 +50,6 @@ if __name__ == "__main__":
     print_probs(format_to_fractional(probs))
     print("Probabilities in decimal form:")
     print_probs(probs)
+
+if __name__ == "__main__":
+    main()
