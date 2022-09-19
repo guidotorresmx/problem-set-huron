@@ -32,6 +32,7 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     n = len(s)
     sIndexes = list(range(1, n + 1))
 
+    #TODO: further optimization may be required
     combinations = list(itertools.combinations(sIndexes, r))
     probs = {i: 0 for i in range(1, n + 1)}
 
@@ -42,7 +43,12 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     for sIndex, _ in probs.items():
         probs[sIndex] /= total
 
-    return probs
+    #TODO: change to implace or change algorithm for vales to indexes
+    newProbs = {}
+    for key, item in probs.items():
+        newProbs[list(s)[key-1]] = item
+
+    return newProbs
 
 
 if __name__ == "__main__":
