@@ -22,28 +22,33 @@ uint32_t nCr( uint16_t n, uint16_t r )
     return result;
 }
 
-void get_probs_analytically(set<uint16_t> &s, uint16_t r){
-    map<uint16_t, float> probs;
-    uint16_t sSize = s.size();
+void get_probs_analytically(
+        set<uint16_t> &s, 
+        uint16_t r, 
+        map<uint16_t, float> &probs
+    ){
+    uint16_t n = s.size();
   
-    for (auto i=s.begin(); i!=s.end(); ++i){
-        probs.insert({*i,0.0});
+    uint32_t denominator = nCr(n, r);
+    uint16_t i = 0;
+    for (auto key=s.begin(); key!=s.end(); ++key){
+        i++;
+        uint32_t numerator = nCr(n-i,r-1);
+        float val = 
+            static_cast<float>(numerator)/
+            static_cast<float>(denominator);
+        probs.insert({*key,val});
     }
-
-  
-  
-  
-    for(auto it=probs.begin(); it!=probs.end(); ++it){
-        cout << it->first << " => " << it->second << endl;
-    }
-    cout << "set size: " << sSize;
-    
 }
 
 int main(){
     set<uint16_t> s{49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46};
     uint16_t r=6;
-    get_probs_analytically(s, r);
-    cout << endl << r << endl;
 
+    map<uint16_t, float> probs;
+    get_probs_analytically(s, r, probs);
+
+    for(auto i=probs.begin(); i!=probs.end(); ++i){
+        printf("%d : %.3f \n", i->first, i->second);   
+    }
 }
