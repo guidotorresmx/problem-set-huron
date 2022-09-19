@@ -1,4 +1,4 @@
-//#include "utils.h"
+#include "../include/analytical.h"
 #include <iostream>
 #include <cmath>
 #include <set>
@@ -41,7 +41,7 @@ void get_probs_analytically(
     }
 }
 
-int main(){
+int analytical(){
     set<uint16_t> s{49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46};
     uint16_t r=6;
 

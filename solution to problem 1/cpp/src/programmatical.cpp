@@ -1,4 +1,4 @@
-//#include "utils.h"
+#include "../include/programmatical.h"
 #include <iostream>
 #include <cmath>
 #include <set>
@@ -12,8 +12,8 @@ void get_combinations_recursive(
         uint16_t n, 
         uint16_t k, 
         uint16_t i, 
-        std::vector<uint16_t> combination, 
-        std::vector<std::vector<uint16_t>> &combinations
+        vector<uint16_t> combination, 
+        vector<vector<uint16_t>> &combinations
     ){
     
     if(combination.size() == k){
@@ -66,7 +66,7 @@ void get_probs_analytically(
     
 }
 
-int main(){
+void programmatical(){
     set<uint16_t> s{49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46};
     uint16_t r=6;
 
