@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# vscode
+.vscode
+.vscode/**
+
+#python specific 
+__pycache__/
+*.py[cod]
