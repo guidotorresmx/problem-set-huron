@@ -36,7 +36,7 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
 
     #optimizable by mixing following 4 lines into a single iterative function
     #instead of list of combinations but less readable
-    combinations = list(itertools.combinations(sIndexes, r))
+    combinations = itertools.combinations(sIndexes, r)
     probs = {i: 0 for i in s}
     for combination in combinations:
         probs[s[min(combination)-1]] += 1
