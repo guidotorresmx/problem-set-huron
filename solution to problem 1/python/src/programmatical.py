@@ -1,8 +1,23 @@
 import itertools
 from typing import Dict, Set
-from utils import format_to_fractional, print_probs
+from utils import normalize_probs, format_to_fractional, print_probs
 
-
+def normalize_probs(probs: Dict) -> Dict:
+    '''
+    modifies values from dict, so the sum of its values is 1
+        params:
+            probs = {
+                1: 4,
+                2: 3,
+                3: 3,
+                }
+        returns:
+            probs = {
+                1: .4,
+                2: .3,
+                3: .3,
+                }
+    '''
 def get_probs_programmatically(s: Set, r: int) -> Dict:
     '''
     Recives a set (s) of numbers and a sampling number (r), from which, the
@@ -19,10 +34,10 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
             r = 6
         returns:
             probs = {
-                4: .41,
-                8: .22,
-                15 .16,
-        }
+                1: .5,
+                2: .25,
+                3: .25,
+                }
     '''
 
     if not s:
@@ -35,7 +50,7 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     sIndexes = list(range(1, n + 1))
 
     #optimizable by mixing following 4 lines into a single iterative function
-    #instead of list of combinations but less readable
+    #instead of list of combinations, but becomes less readable
     combinations = itertools.combinations(sIndexes, r)
     probs = {i: 0 for i in s}
     for combination in combinations:

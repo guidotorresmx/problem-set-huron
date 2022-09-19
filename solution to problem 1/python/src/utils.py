@@ -1,9 +1,11 @@
 from fractions import Fraction
 
 def format_to_fractional(probs):
+    '''changes float representation to fractional representation of dict vals'''
     return {k: Fraction(v).limit_denominator() for k, v in probs.items()}
 
 def print_probs(probs):
+    '''prints dict items with 2 decimal places'''
     for key, prob in probs.items():
         if type(prob) is Fraction:
             print(f"    {key} = {prob}")
