@@ -1,5 +1,4 @@
 import itertools
-from fractions import Fraction
 from typing import Dict, Set
 from utils import format_to_fractional, print_probs
 
@@ -31,26 +30,22 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     if not r:
         raise ValueError("please specify a sampling number")
 
+    s = sorted(s)
     n = len(s)
     sIndexes = list(range(1, n + 1))
 
-    #TODO: verify possible further optimization
+    #optimizable by mixing following 4 lines into a single iterative function
+    #instead of list of combinations but less readable
     combinations = list(itertools.combinations(sIndexes, r))
-    probs = {i: 0 for i in range(1, n + 1)}
-
+    probs = {i: 0 for i in s}
     for combination in combinations:
-        probs[min(combination)] += 1
+        probs[s[min(combination)-1]] += 1
 
     total = sum(probs.values())
     for sIndex, _ in probs.items():
         probs[sIndex] /= total
 
-    #TODO: change to implace or change algorithm for vales to indexes
-    FinalProbs = {}
-    for key, item in probs.items():
-        FinalProbs[list(s)[key-1]] = item 
-        
-    return FinalProbs
+    return probs
 
 
 if __name__ == "__main__":
