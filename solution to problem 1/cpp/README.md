@@ -1,7 +1,7 @@
 # Python solution
 
 ## About
-Analytic and Programmatic solutions for the first problem described in [project](../../README.md)
+Analytic and Programmatic solutions for the first problem described in c++ for [project](../../README.md)
 
 ## Directory
 
@@ -9,9 +9,6 @@ Analytic and Programmatic solutions for the first problem described in [project]
   - src/main: includes execution calls for both both approaches
   - src/programmatical: includes the programmatical solution
   - src/analytical: includes the analytical solution
-- test: includes the tests of the solution
-  - test/test_analytical: test file of the src/analytical module
-  - test/test_programmatical: test file of the src/programmatical module
 
 ## Execution
 
@@ -19,14 +16,11 @@ To execute and get results, use:
 ```
  git clone https://github.com/guidotorresmx/problem-set-huron.git
  cd "solution to problem 1"
- python -m python.src.main
+ cd cpp
+ g++ ./src/main.cpp -o main
+ ./main
 ```
 
 ## Testing
 
-To test this code use:
-```
- git clone https://github.com/guidotorresmx/problem-set-huron.git
- cd "solution to problem 1"
- python -m unittest
-```
+Pending testing creation with googletest and makefile revamp
