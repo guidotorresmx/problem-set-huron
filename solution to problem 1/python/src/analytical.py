@@ -1,7 +1,13 @@
 import itertools
+from math import factorial
 from typing import Dict, Set
 from utils import format_to_fractional, print_probs
 
+def combinations(n, r):
+    try:
+        return factorial(n)/(factorial(r)*factorial(n-r))
+    except:
+        return 0
 
 def get_probs_analytically(s: Set, r: int) -> Dict:
     '''
@@ -32,18 +38,12 @@ def get_probs_analytically(s: Set, r: int) -> Dict:
 
     s = sorted(s)
     n = len(s)
-    sIndexes = list(range(1, n + 1))
 
-    #optimizable by mixing following 4 lines into a single iterative function
-    #instead of list of combinations but less readable
-    combinations = list(itertools.combinations(sIndexes, r))
-    probs = {i: 0 for i in s}
-    for combination in combinations:
-        probs[s[min(combination)-1]] += 1
-
-    total = sum(probs.values())
-    for sIndex, _ in probs.items():
-        probs[sIndex] /= total
+    probs = {}
+    denominator = combinations(n,r)
+    for i, val in enumerate(s):
+        numerator = combinations(n-i-1,r-1)
+        probs[val] = numerator/denominator
 
     return probs
 
