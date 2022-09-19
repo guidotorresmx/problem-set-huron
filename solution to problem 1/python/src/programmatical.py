@@ -2,22 +2,6 @@ import itertools
 from typing import Dict, Set
 from utils import normalize_probs, format_to_fractional, print_probs
 
-def normalize_probs(probs: Dict) -> Dict:
-    '''
-    modifies values from dict, so the sum of its values is 1
-        params:
-            probs = {
-                1: 4,
-                2: 3,
-                3: 3,
-                }
-        returns:
-            probs = {
-                1: .4,
-                2: .3,
-                3: .3,
-                }
-    '''
 def get_probs_programmatically(s: Set, r: int) -> Dict:
     '''
     Recives a set (s) of numbers and a sampling number (r), from which, the
@@ -56,10 +40,7 @@ def get_probs_programmatically(s: Set, r: int) -> Dict:
     for combination in combinations:
         probs[s[min(combination)-1]] += 1
 
-    total = sum(probs.values())
-    for sIndex, _ in probs.items():
-        probs[sIndex] /= total
-
+    normalize_probs(probs)
     return probs
 
 

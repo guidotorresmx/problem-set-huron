@@ -1,4 +1,5 @@
 from fractions import Fraction
+from typing import Dict
 
 def format_to_fractional(probs):
     '''changes float representation to fractional representation of dict vals'''
@@ -28,3 +29,8 @@ def normalize_probs(probs: Dict) -> Dict:
                 3: .3,
                 }
     '''
+    total = sum(probs.values())
+    print("inside programmatical")
+    print("normalization")
+    for sIndex, _ in probs.items():
+        probs[sIndex] /= total
