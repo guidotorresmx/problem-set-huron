@@ -32,3 +32,25 @@ Source code of the project can be found at [https://github.com/guidotorresmx/pro
 ## Links to solutions
 - [Analytical and Programmatical solution in c++ ->   ](solution-to-problem-1/cpp)
 - [Analytical and Programmatical solution in python ->](solution-to-problem-1/python)
+
+## Sample results
+
+each number can be the minimum of the subset, exactly the following percent of
+the times for the set: S={49, 8, 48, 15, 47, 4, 16, 23, 43, 44, 42, 45, 46} and
+sampling size of 6
+
+```
+     4 = 46.15%
+     8 = 26.92%
+    15 = 14.69%
+    16 = 07.34%
+    23 = 03.26%
+    42 = 01.22%
+    43 = 00.35%
+    44 = 00.06%
+    45 = 00.00%
+    46 = 00.00%
+    47 = 00.00%
+    48 = 00.00%
+    49 = 00.00%
+```
