@@ -31,4 +31,4 @@ Source code of the project can be found at [https://github.com/guidotorresmx/pro
 
 ## Links to solutions
 - [Analytical and Programmatical solution in c++ ->   ](solution-to-problem-1/cpp)
-- [Analytical and Programmatical solution in python ->](solution-to-problem-2/python)
+- [Analytical and Programmatical solution in python ->](solution-to-problem-1/python)
